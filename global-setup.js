@@ -40,7 +40,7 @@ async function globalSetup() {
 
     await page.locator("xpath=//button[normalize-space()='Lanjutkan']").click();
 
-    await expect(page.locator("css=.btn.btn-reservasi.color-primary2.f0kom9")).toBeVisible({ timeout: 10_000 });
+    await expect(page.locator("xpath=//a[normalize-space()='Tentang']")).toBeVisible({timeout: 3000});
 
     await page.context().storageState({ path: "./LoginAuth.json" });
 

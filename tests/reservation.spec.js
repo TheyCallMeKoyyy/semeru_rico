@@ -9,5 +9,5 @@ test.only("reservation", async ({
 }) => {
 
     // pick form to select
-    await webApp.locator("xpath=//span[normalize-space()='Pilih Keberangkatan']").click()
+    await expect(webApp.locator("xpath=//p[normalize-space()='Keberangkatan']")).toBeVisible({timeout: 3000})
 })

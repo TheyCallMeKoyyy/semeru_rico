@@ -1,0 +1,65 @@
+{
+  "cookies": [
+    {
+      "name": "PHPSESSID",
+      "value": "66iguhs74lhg5l2fbo2au6237d",
+      "domain": "kiatrans-web.asmat.app",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "XSRF-TOKEN",
+      "value": "eyJpdiI6InowWVpVMWhSc0JWTDdRT3NINGdFSGc9PSIsInZhbHVlIjoiakZKdVBYb2JaUjhKVUhmT1hjYVwvZENvXC9aa3NtRUQrWjNTV21SVlNmSU1vVzJRdXk1QmdQSGRFamhqZzUwR1dmIiwibWFjIjoiMmI5ZDJhNWQ2MWI1ZWQ5YzUwZGQ3MTA5NDEzYzVhZmZmMjk5NDQwMzNlNzUzNjljMWNlM2E5ZjIwMzE0ZGZkYiJ9",
+      "domain": "kiatrans-web.asmat.app",
+      "path": "/",
+      "expires": 1720183448.968287,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "laravel_session",
+      "value": "AcUH1MZBT0EQsPkS164ZnP1KlMUFHcUW5nXB9odK",
+      "domain": "kiatrans-web.asmat.app",
+      "path": "/",
+      "expires": 1720183448.968441,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "req_081234567890",
+      "value": "2",
+      "domain": "kiatrans-web.asmat.app",
+      "path": "/",
+      "expires": 1720183449,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga_0RMSC14S9L",
+      "value": "GS1.1.1720176249.1.0.1720176249.60.0.0",
+      "domain": ".asmat.app",
+      "path": "/",
+      "expires": 1754736249.718103,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga",
+      "value": "GA1.1.579953141.1720176250",
+      "domain": ".asmat.app",
+      "path": "/",
+      "expires": 1754736249.718522,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": []
+}
