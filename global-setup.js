@@ -1,5 +1,5 @@
 const { 
-    chromium, 
+    chromium,
     expect
 } = require('@playwright/test');
 

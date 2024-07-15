@@ -2,7 +2,7 @@
   "cookies": [
     {
       "name": "PHPSESSID",
-      "value": "66iguhs74lhg5l2fbo2au6237d",
+      "value": "j9ea7sv914o50dsg6jf8538v1p",
       "domain": "kiatrans-web.asmat.app",
       "path": "/",
       "expires": -1,
@@ -12,20 +12,20 @@
     },
     {
       "name": "XSRF-TOKEN",
-      "value": "eyJpdiI6InowWVpVMWhSc0JWTDdRT3NINGdFSGc9PSIsInZhbHVlIjoiakZKdVBYb2JaUjhKVUhmT1hjYVwvZENvXC9aa3NtRUQrWjNTV21SVlNmSU1vVzJRdXk1QmdQSGRFamhqZzUwR1dmIiwibWFjIjoiMmI5ZDJhNWQ2MWI1ZWQ5YzUwZGQ3MTA5NDEzYzVhZmZmMjk5NDQwMzNlNzUzNjljMWNlM2E5ZjIwMzE0ZGZkYiJ9",
+      "value": "eyJpdiI6Im5QVzBFQTU4Rm51dVBJaFBSUzc0QUE9PSIsInZhbHVlIjoiaHNmQ3hTWnpiR0dzTjhub0srS1Q1eDBXczJRcWU4NGdISjl0SmV5TG8zUmVMUld3ZFZJQUtcL2ZCMVBYbDdka08iLCJtYWMiOiIzNmJlZTA0MDUzYjkxYTQ5OTk0NGQxMjYwYjFhMGNiYjRlOTVjZjExYzI5NDg3YzMzODM4YmViNWM4N2I2NDgwIn0%3D",
       "domain": "kiatrans-web.asmat.app",
       "path": "/",
-      "expires": 1720183448.968287,
+      "expires": 1721021099.976206,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
     },
     {
       "name": "laravel_session",
-      "value": "AcUH1MZBT0EQsPkS164ZnP1KlMUFHcUW5nXB9odK",
+      "value": "GLcDHg1HOzyUetXyNJatVwfqcVnnpdHzkQMQT1l4",
       "domain": "kiatrans-web.asmat.app",
       "path": "/",
-      "expires": 1720183448.968441,
+      "expires": 1721021099.976343,
       "httpOnly": true,
       "secure": false,
       "sameSite": "Lax"
@@ -35,27 +35,27 @@
       "value": "2",
       "domain": "kiatrans-web.asmat.app",
       "path": "/",
-      "expires": 1720183449,
+      "expires": 1721021100,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
     },
     {
       "name": "_ga_0RMSC14S9L",
-      "value": "GS1.1.1720176249.1.0.1720176249.60.0.0",
+      "value": "GS1.1.1721013900.1.0.1721013900.60.0.0",
       "domain": ".asmat.app",
       "path": "/",
-      "expires": 1754736249.718103,
+      "expires": 1755573900.641579,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
     },
     {
       "name": "_ga",
-      "value": "GA1.1.579953141.1720176250",
+      "value": "GA1.1.134018842.1721013901",
       "domain": ".asmat.app",
       "path": "/",
-      "expires": 1754736249.718522,
+      "expires": 1755573900.641991,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"

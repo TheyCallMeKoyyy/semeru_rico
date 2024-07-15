@@ -4,10 +4,10 @@ const {
 } = require('./setup');
 
 
-test.only("reservation", async ({
+test("reservation", async ({
     webApp
 }) => {
 
     // pick form to select
-    await expect(webApp.locator("xpath=//p[normalize-space()='Keberangkatan']")).toBeVisible({timeout: 3000})
+    await expect(webApp.locator("xpath=//p[normalize-space()='99 Transline']")).toBeVisible({timeout: 3000})
 })
