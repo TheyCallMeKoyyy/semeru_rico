@@ -41,7 +41,7 @@ test('Resend OTP', async ({ webApp }) => {
     await navigateToLoginPage(webApp);
     await inputPhoneNumberAndLogin(webApp, "081234567890");
 
-    await expect(webApp.locator("//span[@id='btn-resend']")).toBeVisible({ timeout: 120_000 });
+    await webApp.waitForTimeout(125000);
     await webApp.locator("xpath=//span[@id='btn-resend']").click();
     await expect(webApp.locator("xpath=//span[@id='btn-resend']")).toBeHidden({ timeout: 3_000 });
 });
