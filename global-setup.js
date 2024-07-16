@@ -8,7 +8,7 @@ async function globalSetup() {
     const context = await browser.newContext();
     const page = await context.newPage();
 
-    await page.goto('https://tbk:development@kiatrans-web.asmat.app');
+    await page.goto(process.env.URL);
 
     // click to link /masuk
     await page.locator("css=.nav-link.ddaccount").click()
