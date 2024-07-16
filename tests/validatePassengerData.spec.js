@@ -34,7 +34,7 @@ async function inputPassengerName(webApp, name){
 
 // Helper function to input passenger email
 async function inputPassengerEmail(webApp, email){
-    await webApp.locator("id=pemesan").
+    await webApp.locator("id=email").
     fill(email)
 }
 
@@ -57,37 +57,126 @@ async function submitPassenger(webApp){
     await webApp.locator("id=submit").click()
 }
 
-test('passenger name without input', async ({ webApp }) => {
+// Test case: input passenger name without text
+test('72. passenger name without input', async ({ webApp }) => {
     await navigateToPassengerData(webApp,"CILEGON")
     await inputPassengerName(webApp, "");
     await webApp.waitForTimeout(2000);
+    await submitPassenger(webApp)
     await expect(webApp.locator("id=pemesan-error")).toBeVisible({timeout: 4000});
 });
 
 
 
-// test.describe('validatePassengerData', () => {
-//     test.beforeEach('navigateToPassengerData', async (webApp)=>{
-//         await navigateToPassengerData(webApp,"CILEGON")
-//     })
-//     test('passenger name without input', async ({ webApp }) => {
-//         await inputPassengerName(webApp, "");
-//         await webApp.waitForTimeout(2000);
-//         await expect(webApp.locator("id=pemesan-error")).toBeVisible({timeout: 4000});
-//     });
-//     test('passenger name with symbol', async ({ webApp }) => {
-//         await inputPassengerName(webApp, "123.");
-//         await webApp.waitForTimeout(2000);
-//         await expect(webApp.locator("id=pemesan-error")).toBeVisible({timeout: 4000});
-//     });
-//     test('passenger name less than 3 char', async ({ webApp }) => {
-//         await inputPassengerName(webApp, "a");
-//         await webApp.waitForTimeout(2000);
-//         await expect(webApp.locator("id=pemesan-error")).toBeVisible({timeout: 4000});
-//     });
-//     test('passenger name with white space', async ({ webApp }) => {
-//         await inputPassengerName(webApp, "    ");
-//         await webApp.waitForTimeout(2000);
-//         await expect(webApp.locator("id=pemesan-error")).toBeVisible({timeout: 4000});
-//     });
-// });
+// Test case: input passenger name with symbol and number
+test('73. Passenger name with symbol and number', async ({ webApp }) => {
+    await navigateToPassengerData(webApp,"CILEGON")
+    await inputPassengerName(webApp, "123$17");
+    await webApp.waitForTimeout(2000);
+    await expect(webApp.locator("id=pemesan-error")).toBeVisible({timeout: 4000});
+});
+
+// Test case: input passenger name with symbol and number
+test('74. Passenger name greater than 30 and less than 3', async ({ webApp }) => {
+    await navigateToPassengerData(webApp,"CILEGON")
+    await inputPassengerName(webApp, "bb");
+    await webApp.waitForTimeout(2000);
+    await expect(webApp.locator("id=pemesan-error")).toBeVisible({timeout: 4000});
+    const maxlength= await webApp.locator('id=pemesan').getAttribute("maxlength");
+
+    if (maxlength !== null) {
+        console.log(`The element has a maxlength with value: ${maxlength}`);
+    } else {
+        console.log('The element does not have a maxlength');
+    }
+});
+
+// Test case: input passenger name with white space
+test('75. Passenger name with white space', async ({ webApp }) => {
+    await navigateToPassengerData(webApp,"CILEGON")
+    await inputPassengerName(webApp, "   ");
+    await webApp.waitForTimeout(2000);
+    await expect(webApp.locator("id=pemesan-error")).toBeVisible({timeout: 4000});
+    await submitPassenger(webApp)
+});
+
+// Test case: input passenger name with white space
+test('80. Passenger address without text', async ({ webApp }) => {
+    await navigateToPassengerData(webApp,"CILEGON")
+    await inputPassengerAddress(webApp, "");
+    await webApp.waitForTimeout(2000);
+    await expect(webApp.locator("id=alamat-error")).toBeVisible({timeout: 4000});
+    await submitPassenger(webApp)
+});
+
+
+// Test case: input passenger address with number, symbol, and character
+test('81. Passenger address with number, symbol, and character', async ({ webApp }) => {
+    await navigateToPassengerData(webApp,"CILEGON")
+    await inputPassengerAddress(webApp, "Jl. Purbasari No.80");
+    await webApp.waitForTimeout(2000);
+    await submitPassenger(webApp)
+    const errorMessage = await expect(webApp.locator("id=alamat-error")).toBeVisible({timeout: 2000});
+
+    if (errorMessage != null){
+        console.log("Tidak dapat menginput alamat menggunakan")
+    } else{
+        console.log("Alamat dapat diinput menggunakan angka, simbol, dan huruf")
+    }
+});
+
+// Test case: input passenger number without less than 9 digit and greater than 13 digit
+test('82. Passenger address have max length attribute', async ({ webApp }) => {
+    await navigateToPassengerData(webApp,"CILEGON")
+    await inputPassengerAddress(webApp, "Jl. Purbasari");
+    const maxlength= await webApp.locator('id=alamat').getAttribute("maxlength");
+
+    if (maxlength !== null) {
+        console.log(`The element has a maxlength with value: ${maxlength}`);
+    } else {
+        console.log('The element does not have a maxlength');
+    }
+});
+
+// Test case: input passenger number without text
+test('83. Passenger number without text', async ({ webApp }) => {
+    await navigateToPassengerData(webApp,"CILEGON")
+    await inputPassengerPhone(webApp, "");
+    await webApp.waitForTimeout(2000);
+    await submitPassenger(webApp)
+    await expect(webApp.locator("id=telepon-error")).toBeVisible({timeout: 4000});
+});
+
+// Test case: input passenger number with character
+test('84. Passenger number with character', async ({ webApp }) => {
+    await navigateToPassengerData(webApp,"CILEGON")
+    await inputPassengerPhone(webApp, "character");
+    await webApp.waitForTimeout(2000);
+    await submitPassenger(webApp)
+    await expect(webApp.locator("id=telepon-error")).toBeVisible({timeout: 4000});
+});
+
+
+// Test case: input passenger number without less than 9 digit and greater than 13 digit
+test('85. Passenger number greater than 13 and less than 9', async ({ webApp }) => {
+    await navigateToPassengerData(webApp,"CILEGON")
+    await inputPassengerName(webApp, "0812345");
+    await webApp.waitForTimeout(2000);
+    await expect(webApp.locator("id=telepon-error")).toBeVisible({timeout: 4000});
+    const maxlength= await webApp.locator('id=telepon').getAttribute("maxlength");
+
+    if (maxlength !== null) {
+        console.log(`The element has a maxlength with value: ${maxlength}`);
+    } else {
+        console.log('The element does not have a maxlength');
+    }
+});
+
+// Test case: input passenger address with whitespace
+test('86. Passenger address with white space', async ({ webApp }) => {
+    await navigateToPassengerData(webApp,"CILEGON")
+    await inputPassengerAddress(webApp, "   ");
+    await webApp.waitForTimeout(2000);
+    await expect(webApp.locator("id=pemesan-error")).toBeVisible({timeout: 4000});
+    await submitPassenger(webApp)
+});
