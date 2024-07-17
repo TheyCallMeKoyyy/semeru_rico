@@ -67,8 +67,19 @@ test('login with input number phone less than nine digit', async ({ webApp }) =>
 
 // Test case: Login with a valid phone number and input OTP
 test('login with input number phone', async ({ webApp }) => {
+    const closeModal = await webApp.locator("//span[@aria-hidden='true']")
+
+
     await navigateToLoginPage(webApp);
     await inputPhoneNumberAndLogin(webApp, process.env.NUMBER_PHONE);
     await inputOTP(webApp, process.env.OTP);
-    await expect(webApp.locator("xpath=//button[normalize-space()='Lanjutkan']")).toBeVisible({ timeout: 15_000 });
+    await expect(webApp.locator("xpath=//button[normalize-space()='Lanjutkan']")).toBeVisible({ timeout: 5000 });
+    await webApp.locator("xpath=//button[normalize-space()='Lanjutkan']").click()
+
+    if (closeModal != null){
+        closeModal.click()
+        await webApp.waitForTimeout(2000)
+        await webApp.locator("xpath=//button[normalize-space()='Lanjutkan']").click()
+    }
+    await expect(webApp.locator("xpath=//p[@class='fs-18 mb-0 font-weight-bold']")).toBeVisible({timeout: 4000})
 });

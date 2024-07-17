@@ -2,8 +2,8 @@
   "cookies": [
     {
       "name": "PHPSESSID",
-      "value": "2a1qimbg248seagtknbrt4v5c3",
-      "domain": "harumbsi.com",
+      "value": "9fo7q62l4fotjlsp6k6djeunf3",
+      "domain": "kiatrans-web.asmat.app",
       "path": "/",
       "expires": -1,
       "httpOnly": false,
@@ -11,61 +11,51 @@
       "sameSite": "Lax"
     },
     {
-      "name": "_ga",
-      "value": "GA1.1.1929745729.1721124259",
-      "domain": ".harumbsi.com",
-      "path": "/",
-      "expires": 1755684262.582166,
-      "httpOnly": false,
-      "secure": false,
-      "sameSite": "Lax"
-    },
-    {
       "name": "XSRF-TOKEN",
-      "value": "eyJpdiI6InNaeXdieDZDa1ZxUHQ3Q1VlUjMzbWc9PSIsInZhbHVlIjoiSDBmUDNXWEVWYVwvaHdmU0tRZ0NaOFh6ZytrQWdGM1RLSXBVVUFacm1FMWtQUFN1RzhENlBKQ0dxdlZSUWpkakciLCJtYWMiOiI1ZmRmMGE1MWM2NDRlOTRiYzQ1ZDdlZWVjZTJiZmEzNzQ2M2ZmMzMyZDAxOTYzMDIwZGI2MmJlM2E3NGEzZWRmIn0%3D",
-      "domain": "harumbsi.com",
+      "value": "eyJpdiI6IkRcL2NSdWE5NnlEWk9HUnZZY3NCcWRBPT0iLCJ2YWx1ZSI6IkhBMXpFa1E4dE81QUhyZmZiZVpRaFMzbHoxU3hoY2NCQmxcL3RIeFVGRnZLb1hjUEY4QkNRY0EzTmFYdk1vNUNQIiwibWFjIjoiNzUyMzhlNDgxMzI0NzA1ZGM3ZGUwMDhiNWY1NTQxNzIyZTBjYjA0NDU4M2JiM2FlZGViYzVlMTAwN2MxNjI3MyJ9",
+      "domain": "kiatrans-web.asmat.app",
       "path": "/",
-      "expires": 1721131461.319081,
+      "expires": 1721207624.485326,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
     },
     {
       "name": "laravel_session",
-      "value": "QRDPhUj3ycXmSrwuOXC3k0ETsTrsXeHWtr5JGZy9",
-      "domain": "harumbsi.com",
+      "value": "mgrFGgpNTDvV6jJzYPweGiQ3HBzSjxAoZUFJlx3V",
+      "domain": "kiatrans-web.asmat.app",
       "path": "/",
-      "expires": 1721131461.319252,
+      "expires": 1721207624.485427,
       "httpOnly": true,
-      "secure": false,
-      "sameSite": "Lax"
-    },
-    {
-      "name": "_ga_TF7ETE3ZM0",
-      "value": "GS1.1.1721124258.1.1.1721124261.0.0.0",
-      "domain": ".harumbsi.com",
-      "path": "/",
-      "expires": 1755684261.391834,
-      "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
     },
     {
       "name": "req_081234567890",
       "value": "2",
-      "domain": "harumbsi.com",
+      "domain": "kiatrans-web.asmat.app",
       "path": "/",
-      "expires": 1721131461,
+      "expires": 1721207624,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
     },
     {
       "name": "_ga_0RMSC14S9L",
-      "value": "GS1.1.1721124262.1.0.1721124262.60.0.0",
-      "domain": ".harumbsi.com",
+      "value": "GS1.1.1721200424.1.0.1721200424.60.0.0",
+      "domain": ".asmat.app",
       "path": "/",
-      "expires": 1755684262.581353,
+      "expires": 1755760424.877401,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga",
+      "value": "GA1.1.407944725.1721200425",
+      "domain": ".asmat.app",
+      "path": "/",
+      "expires": 1755760424.877731,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
