@@ -14,10 +14,10 @@ export const config = {
     otp: '123456',
     passenger_data: {
       name: 'shugi',
-      phone_number: '089646771518',
+      phone_number: '0812345678901',
       email: 'sutra.prabowo@gmail.com',
       address: 'jl. purbasari 4 no. 1',
-      seat_number: 6,
+      seat_number: 3,
       cust_name_same: 1,
       cust_name: 'shugi'
     },
@@ -50,7 +50,7 @@ export const config = {
       packet: 'PCNX250221OKA5',
     },
     url:{
-      website: 'https://daytrans.co.id',
+      website: 'https://tbk:development@dev2.web.daytrans.asmat.app/',
       otp: ''
     }
 };

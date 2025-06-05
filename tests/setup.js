@@ -42,6 +42,7 @@ exports.test = test.extend({
         await newPage.goto(url, {timeout: 120_000});
         await closePopup(newPage)
         await use(newPage); // Use the newPage instead of the existing page
+        await newPage.pause();
         // await browser.close();
     },
 });

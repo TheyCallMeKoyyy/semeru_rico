@@ -74,12 +74,14 @@ async function inputPassengerData(webApp, name, email, phoneNumber) {
   await webApp.locator("#penumpang1").fill(name);
 
   // Wait for the submit button to be enabled and click
-  const submitButton = webApp.locator("#submitModal");
+  const submitButton = webApp.locator("id=submitModal");
   await submitButton.waitFor({ state: 'visible', timeout: 5000 });
   await submitButton.click();
 
+
   // Wait for the confirm button and click
-  const confirmButton = webApp.locator("#confirmSubmit");
+  const confirmButton = webApp.locator("id=confirmSubmit");
+  await expect(confirmButton).toBeVisible()
   await confirmButton.waitFor({ state: 'visible', timeout: 5000 });
   await confirmButton.click();
 }
@@ -91,7 +93,7 @@ async function selectSeat(webApp, numSeat) {
         type: 'allure.step',
         value: 'Select seat',
     });
-    const seat = webApp.locator(`xpath=//p[normalize-space()='${numSeat}']`);
+    const seat = webApp.locator(`xpath=//div[@id='${numSeat}']//p[1]`);
     await seat.click();
 
     // if(config.passenger_data.cust_name_same != 0){
@@ -101,7 +103,6 @@ async function selectSeat(webApp, numSeat) {
     //     await webApp.locator("id=penumpang1").
     //     fill(config.passengerData.custName)
     // }
-    await webApp.waitForTimeout(1000);
 
     await webApp.locator("id=submit").click();
     
@@ -135,7 +136,7 @@ async function selectPayment(webApp, channel, paymentMethod) {
     });
 
     await webApp.locator(`xpath=//p[normalize-space()='Pembayaran Instan']`).click();
-    await webApp.locator(`xpath=//img[contains(@alt,'GOPAY')]`).click()
+    await webApp.locator(`xpath=//img[contains(@alt,'OVO')]`).click()
 }
 
 
@@ -145,6 +146,10 @@ async function checkingTnc(webApp) {
     await tncButton.click()
 
     await webApp.locator("id=submit").click();
+    
+    const confirmButton = webApp.locator("css=.btn.btn-block.btn-danger.text-white.py-2")
+    await expect(confirmButton).toBeVisible()
+    await confirmButton.click()
 }
 
 
@@ -218,6 +223,7 @@ test('reservation', async ({ webApp }) => {
     // Accept terms and submit
     await checkingTnc(webApp)
 
+   
     
 });
 
