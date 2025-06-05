@@ -9,19 +9,25 @@ async function checkBookingCode(webApp, codeBooking) {
         value: 'Check Booking Code',
     });
 
-    const codeBookingPath = webApp.locator("xpath=//a[normalize-space()='Cek Reservasi']")
+    const codeBookingPath = webApp.locator("xpath=//a[normalize-space()='Cek Booking']")
     await expect(codeBookingPath).toBeVisible({timeout: 1000})
 
     if(codeBooking != ''){
         await codeBookingPath.click()
-        await webApp.locator("xpath=//input[@placeholder='Kode Booking']").
+        console.log(`Code Booking ${codeBooking}`)
+        await webApp.locator("xpath=//input[@placeholder='Masukan Kode Booking Anda !']").
         fill(codeBooking)
-        await webApp.locator("xpath=//button[normalize-space()='Cek Reservasi']").click()
+        await webApp.locator("xpath=//button[normalize-space()='KIRIM']").click()
+        // Get the current URL after navigation
+        const currentUrl = webApp.url();
+        console.log(`Url: ${currentUrl}`)
     } else{
         await codeBookingPath.click()
-        await webApp.locator("xpath=//input[@placeholder='Kode Booking']").
+        console.log(`Code booking ${codeBooking} Found`)
+        await webApp.locator("xpath=//input[@placeholder='Masukan Kode Booking Anda !']").
         fill("codeBooking")
-        await webApp.locator("xpath=//button[normalize-space()='Cek Reservasi']").click()
+        console.log(`Code booking ${codeBooking} Not Found`)
+        await webApp.locator("xpath=//button[normalize-space()='KIRIM']").click()
         console.log("Kode booking tidak ditemukan!")
 
         return

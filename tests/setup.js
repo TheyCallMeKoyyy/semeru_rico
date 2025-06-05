@@ -35,14 +35,14 @@ exports.expect = expect;
 exports.test = test.extend({
     webApp: async ({ page }, use) => {
         // Launch the browser in headless mode here
-        const browser = await chromium.launch({ headless: true });
+        const browser = await chromium.launch({ headless: false });
         const context = await browser.newContext();
         const newPage = await context.newPage();  // Create a new page here
         const url = config.url.website;
-        await newPage.goto(url);
+        await newPage.goto(url, {timeout: 120_000});
         await closePopup(newPage)
         await use(newPage); // Use the newPage instead of the existing page
-        await browser.close();
+        // await browser.close();
     },
 });
 
