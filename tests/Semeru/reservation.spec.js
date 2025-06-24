@@ -91,13 +91,10 @@ async function inputPassengerData(webApp, name, email, phoneNumber, custName) {
         type: 'allure.step',
         value: 'Input passenger details',
     });
-    console.log(config.passanger_data.name)
-    await webApp.locator(`xpath=//input[@id='pemesan']`).fill(config.passenger_data.name);
-    console.log(config.passanger_data.email) 
-    await webApp.locator(`xpath=//input[@placeholder='Masukkan Email']`).fill(config.passenger_data.email);
-    console.log(config.passanger_data.phone_number) 
-    await webApp.locator(`xpath=//input[@placeholder='Masukkan No. Telpon']`).fill(config.passenger_data.phone_number);
-    
+    await webApp.locator(`xpath=//input[@id='pemesan']`).fill(config.passenger_data.custName);
+    await webApp.locator(`xpath=//input[@placeholder='Masukkan Email']`).fill(config.passenger_data.booker.email);
+    await webApp.locator(`xpath=//input[@placeholder='Masukkan No. Telpon']`).fill(config.passenger_data.booker.phone_number);
+
     //untuk klik checkbox "Pemesan adalah penumpang"
     if(config.passenger_data.cust_name_same != 0){
         await webApp.locator("xpath=//label[@for='samacheck']").click()
