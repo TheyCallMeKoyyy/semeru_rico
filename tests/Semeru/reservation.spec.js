@@ -33,8 +33,6 @@ async function selectDate(webApp, date) {
     const dateField = webApp.locator(`//input[@name='tglberangkat']`);
     await expect(dateField).toBeVisible();
     await dateField.click();
-    
-    // Next month
     await webApp.locator(`xpath=//span[@class='flatpickr-next-month']//*[name()='svg']`).click();
     await webApp.locator(`xpath=//span[@aria-label='${date}']`).click();
 }
@@ -46,19 +44,23 @@ async function inputAllPassengerData(webApp) {
         const passenger = passengers[i];
 
         if (i ===0 ) {
-            await inputPassengerData( //Belum didefinisiin
+            await inputPassengerData(
                 webApp,
                 passenger.name,
                 config.passenger_data.booker.email,
                 config.passenger_data.booker.phone_number,
-                config.passenger_data.cust_name_same,
-                config.passenger_data.custName
+                config.passenger_data.custName,
             );
         } else {
-            await inputPassengerNameOnly(webApp, i + 1, passenger.name);
+            const addBtn = webApp.locator(`xpath=//button[contains(., 'Tambah Penumpang')]`);
+            if (await addBtn.isVisible()) {
+                await addBtn.click();
+                await webApp.waitForTimeout(500);
+            }
+            await webApp.locator(`id=penumpang${i + 1}`).fill(passenger.name);
         }
 
-        await selectSeat(webApp, passenger.seat_number || (i + 1));
+        await selectSeat(webApp, passenger.seat_number || (i + 3));
     }
 }
 
@@ -69,8 +71,7 @@ async function selectPassenger(webApp, totalPassenger) {
         value: 'Select passenger count',
     });
     await webApp.locator(`xpath=//span[normalize-space()='1 Orang']`).click();
-    
-    const passengerCountOption = webApp.locator(`xpath=//div[normalize-space()='3 Orang']`); //Salah di sini
+    const passengerCountOption = webApp.locator(`xpath=//div[normalize-space()='${totalPassenger} Orang']`);
     await expect(passengerCountOption).toBeVisible({ timeout: 3000 });
     await passengerCountOption.click();
 }
@@ -91,15 +92,15 @@ async function inputPassengerData(webApp, name, email, phoneNumber, custName) {
         type: 'allure.step',
         value: 'Input passenger details',
     });
-    console.log(config.passanger_data.name)
+    console.log(config.passenger_data.passengers[0].name)
     await webApp.locator(`xpath=//input[@id='pemesan']`).fill(config.passenger_data.custName); //ini yang aku ubah senseii 
-    console.log(config.passanger_data.email) 
+    console.log(config.passenger_data.booker.email) 
     await webApp.locator(`xpath=//input[@placeholder='Masukkan Email']`).fill(config.passenger_data.booker.email);
-    console.log(config.passanger_data.phone_number) 
+    console.log(config.passenger_data.booker.phone_number) 
     await webApp.locator(`xpath=//input[@placeholder='Masukkan No. Telpon']`).fill(config.passenger_data.booker.phone_number);
     
     //untuk klik checkbox "Pemesan adalah penumpang"
-    if(config.passenger_data.cust_name_same != 0){
+    if(config.passenger_data.cust_name_same != 3){
         await webApp.locator("xpath=//label[@for='samacheck']").click()
     } else{
          //Input cust name

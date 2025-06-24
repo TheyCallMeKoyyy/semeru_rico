@@ -25,14 +25,17 @@ export const config = {
         passengers: [
             {
                 name: "Enricco Zefanya",
-                seat_number: "3"
+                gender: "laki-laki",
+                seat_number: "3",
             },
             {
                 name: "Setly Boyoh",
+                gender: "Perempuan",
                 seat_number: "4",
             },
             {
                 name: "Stanny Bellinda",
+                gender: "Perempuan",
                 seat_number: "5",
             }
         ]
