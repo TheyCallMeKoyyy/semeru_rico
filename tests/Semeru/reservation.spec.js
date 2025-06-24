@@ -92,7 +92,7 @@ async function inputPassengerData(webApp, name, email, phoneNumber, custName) {
         value: 'Input passenger details',
     });
     console.log(config.passanger_data.name)
-    await webApp.locator(`xpath=//input[@id='pemesan']`).fill(config.passenger_data.name);
+    await webApp.locator(`xpath=//input[@id='pemesan']`).fill(config.passenger_data.name); //ini yang aku ubah senseii 
     console.log(config.passanger_data.email) 
     await webApp.locator(`xpath=//input[@placeholder='Masukkan Email']`).fill(config.passenger_data.email);
     console.log(config.passanger_data.phone_number) 
