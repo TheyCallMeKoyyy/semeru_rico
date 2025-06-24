@@ -92,11 +92,11 @@ async function inputPassengerData(webApp, name, email, phoneNumber, custName) {
         value: 'Input passenger details',
     });
     console.log(config.passanger_data.name)
-    await webApp.locator(`xpath=//input[@id='pemesan']`).fill(config.passenger_data.name); //ini yang aku ubah senseii 
+    await webApp.locator(`xpath=//input[@id='pemesan']`).fill(config.passenger_data.custName); //ini yang aku ubah senseii 
     console.log(config.passanger_data.email) 
-    await webApp.locator(`xpath=//input[@placeholder='Masukkan Email']`).fill(config.passenger_data.email);
+    await webApp.locator(`xpath=//input[@placeholder='Masukkan Email']`).fill(config.passenger_data.booker.email);
     console.log(config.passanger_data.phone_number) 
-    await webApp.locator(`xpath=//input[@placeholder='Masukkan No. Telpon']`).fill(config.passenger_data.phone_number);
+    await webApp.locator(`xpath=//input[@placeholder='Masukkan No. Telpon']`).fill(config.passenger_data.booker.phone_number);
     
     //untuk klik checkbox "Pemesan adalah penumpang"
     if(config.passenger_data.cust_name_same != 0){
