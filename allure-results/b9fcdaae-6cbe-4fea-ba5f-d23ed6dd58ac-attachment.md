@@ -1,0 +1,134 @@
+# Page snapshot
+
+```yaml
+- navigation:
+  - link:
+    - /url: https://www.semerutrans.com
+    - img
+  - list:
+    - listitem:
+      - link "Beranda (current)":
+        - /url: https://www.semerutrans.com
+    - listitem:
+      - link "Cara Bayar":
+        - /url: https://www.semerutrans.com/pembayaran
+    - listitem:
+      - link "Tentang":
+        - /url: https://www.semerutrans.com/tentang
+    - listitem:
+      - link "Outlet":
+        - /url: https://www.semerutrans.com/outlet
+    - listitem:
+      - link "Galeri":
+        - /url: https://www.semerutrans.com/galeri
+    - listitem:
+      - link "Berita":
+        - /url: https://www.semerutrans.com/berita
+    - listitem:
+      - link "Lacak Paket":
+        - /url: https://www.semerutrans.com/paket/cekpaket
+  - link "Cek Tiket":
+    - /url: https://www.semerutrans.com/book/cekbook
+  - list:
+    - listitem:
+      - link " Masuk":
+        - /url: https://www.semerutrans.com/otp/login
+- paragraph: Step 1
+- paragraph: Pilih Jadwal
+- paragraph: Step 2
+- paragraph: Data Pemesan
+- paragraph: Step 3
+- paragraph: Pilih Kursi
+- paragraph: Step 4
+- paragraph: Pembayaran
+- paragraph
+- paragraph: KOPI KENANGAN PARUNG INDOMARET HYBRID-CIKARANG
+- paragraph: 30-07-2025 | 3 penumpang
+- paragraph: Keberangkatan
+- text: KOPI KENANGAN PARUNG
+- searchbox "Cari"
+- text: BEKASI AGEN JATIWARNA ALFAMART AKSES TOL JATIWARNA BEKASI INDOMARET HYBRID-CIKARANG MCD JATI ASIH BOGOR KOPI KENANGAN PARUNG PARUNG BOYOLALI INDOMARET MOJOSONGO BOYOLALI DEMAK ALUN-ALUN DEMAK INDOMARET GAJAH 2 JAKARTA BARAT KALIDERES PERTAMINA 31.118.02 SPBU COCO GROGOL JAKARTA SELATAN LEBAK BULUS LEBAK BULUS KFC BOX PASAR JUMAT PONDOK PINANG INDOMARET H SAIKIN JAKARTA TIMUR PASAR REBO TERMINAL PULOGEBANG JEPARA INDOMARET PECANGAAN PELABUHAN KARTINI POOL JEPARA RSI SULTAN HADLIRIN RSUD KARTINI SEMERU BANGSRI SEMERU KELET SPBU KRASAK PECANGAAN SPBU KRIYAN KARAWANG KARAWANG KLATEN ALFAMART PRAMBANAN MASJID AL-AQSA PASAR DELANGGU SPBU JOGONALAN KLATEN TERMINAL PENGGUNG KUDUS BELI KOPI KUDUS MATAHARI KUDUS TERMINAL KUDUS MAGELANG BAKSO KRIBO MAGELANG HOTEL TRIO MAGELANG SPBU A YANI POTROBANGSAN MAGELANG SPBU BALEDONO TAPE KETAN MUNTILAN MALANG ALFAMART PANGLIMA SUDIRMAN RICHEESE SUNANDAR PRIYO TERMINAL ARJOSARI TOMORO SOEKARNO HATTA PATI DUA KELINCI MIXUE WEDARI POOL JENDRAL SUDIRMAN PATI PURI PATI SMP N 4 PATI SEMARANG ACE HARDWARE KARANG AYU AGEN BAWEN BANGETAYU EXIT TOL BAWEN FOR YOU UNGARAN HALTE KESATRIAN HOTEL PADMA JAVA SUPERMALL JL LINGKAR AMBARAWA MIXUE MT HARYONO POOL MAJAPAHIT SEMARANG SEMERU IMAMBONJOL SEMERU KR AYU/SILIWANGI SEMERU PANDANARAN/TRI LOMBA JUANG SPBU AKPOL SPBU KALIGAWE 44.501.36 ST. PONCOL STASIUN TAWANG TAMAN KASMARAN TERMINAL SUKUN SOLO EXIT TOL KARTASURA (COLOMADU) POOL SLAMET RIYADI SOLO SOLO SQUARE TERMINAL TIRTONADI SOLO TRANSMART PABELAN TUGU KARTASURA SURABAYA SEMERU MEDEANG TANGERANG PORIS INDOMARET BENTENG BETAWI TANGERANG SELATAN AGEN CIPUTAT BSD INDOMARET CIPUTAT INDOMARET ENTRY TOLL PAMULANG PONDOK CABE SEMERU BSD SERPONG YOGYAKARTA ALFAMART BENDOGANTUNGAN KLATEN ALFAMART TEMPEL PASAR SLEMAN POOL JOMBOR YOGYA SEMERU SETURAN SEMERU SUMOHARJO/AFFANDI SEMERU TRANS GADING
+- paragraph:
+  - text: Tujuan
+  - img
+- searchbox "Cari"
+- text: Tidak Ada Tujuan !
+- paragraph: Tanggal Berangkat
+- textbox: 30-07-2025
+- paragraph: Penumpang
+- text: 3 Orang
+- searchbox "Search"
+- text: 1 Orang 2 Orang 3 Orang 4 Orang 5 Orang 6 Orang 7 Orang
+- button "Cari"
+- paragraph: Sesuaikan Jadwal
+- toolbar "true":
+  - group:
+    - button "Jam"
+    - button "Harga"
+- list:
+  - listitem:
+    - paragraph: KOPI KENANGAN PARUNG - INDOMARET HYBRID-CIKARANG
+    - paragraph: 16:05 (Estimasi Waktu Perjalanan 3 Jam)
+    - text: SUITES CLASS PROMO
+    - deletion: Rp 350.000
+    - paragraph: Rp 330.000 - Rp 350.000
+    - button "Pilih"
+  - listitem:
+    - paragraph: KOPI KENANGAN PARUNG - INDOMARET HYBRID-CIKARANG
+    - paragraph: 16:30 (Estimasi Waktu Perjalanan 3 Jam)
+    - text: SUITES CLASS
+    - paragraph: Rp 350.000
+    - button "Pilih"
+- heading "SEMERU" [level=5]:
+  - strong: SEMERU
+- list:
+  - listitem:
+    - paragraph:
+      - link "Tentang":
+        - /url: https://www.semerutrans.com/tentang
+  - listitem:
+    - paragraph:
+      - link "Outlet":
+        - /url: https://www.semerutrans.com/outlet
+  - listitem:
+    - paragraph:
+      - link "Galeri":
+        - /url: https://www.semerutrans.com/galeri
+- heading "Kontak Kami" [level=5]:
+  - strong: Kontak Kami
+- list:
+  - listitem:
+    - paragraph:
+      - link " 0856 4332 2355 (Jombor)":
+        - /url: https://wa.me/6285643322355
+  - listitem:
+    - paragraph:
+      - link " 0857 8635 1255 (Siliwangi)":
+        - /url: https://wa.me/6285786351255
+  - listitem:
+    - paragraph:
+      - link " 0856 4787 4505 (Majapahit)":
+        - /url: https://wa.me/6285647874505
+  - listitem:
+    - paragraph:
+      - link " 0858 6919 98455 (Pati)":
+        - /url: https://wa.me/6285869199845
+  - listitem:
+    - paragraph:
+      - link " 0858 6919 9850 (Seturan)":
+        - /url: https://wa.me/6285869199850
+  - listitem:
+    - paragraph:  024-6718304 (Panggilan Telepon)
+- heading "Sosial Media" [level=5]:
+  - strong: Sosial Media
+- list:
+  - listitem:
+    - paragraph:
+      - link "facebook":
+        - /url: https://www.facebook.com/people/Semerutransindoshuttle/100074156326255/
+  - listitem:
+    - paragraph:
+      - link "Instagram":
+        - /url: https://www.instagram.com/semerutrans.shuttle/?hl=id
+- button " Tanya Admin"
+```

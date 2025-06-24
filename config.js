@@ -5,52 +5,66 @@ export const config = {
       password: 'development',
     },
     journey: {
-      departure: 'Dipatiukur',
-      arrival: 'Markas cafe',
-      date: 'July 28, 2025',
-      return_date: 'July 28 2025',
-      passenger_count: 1,
+      departure: 'KOPI KENANGAN PARUNG',
+      arrival: 'INDOMARET HYBRID-CIKARANG',
+      date: 'July 30, 2025',
+      return_date: 'July 30, 2025',
+      passenger_count: 3,
     },
     otp: '123456',
     passenger_data: {
-      name: 'shugi',
-      phone_number: '0812345678901',
-      email: 'sutra.prabowo@gmail.com',
-      address: 'jl. purbasari 4 no. 1',
-      seat_number: 3,
-      cust_name_same: 1,
-      cust_name: 'shugi'
+        booker: {
+            // 'Enricco Zefanya',
+            //test masuk ke github.
+            email: '2282026@unai.edu',
+            phone_number: '083116912560'
+            
+        },
+        cust_name_same: 1,
+        custName: "Enricco Zefanya",
+        passengers: [
+            {
+                name: "Enricco Zefanya",
+                seat_number: "3"
+            },
+            {
+                name: "Setly Boyoh",
+                seat_number: "4",
+            },
+            {
+                name: "Stanny Bellinda",
+                seat_number: "5",
+            }
+        ]
     },
     voucher:{
       freepass: '',
       harga: '',
       diskon: ''
     },
-    payment: {
-      collapse0:{
-        collapse:0,
-      },
-      collapse1:{
-        collapse:1,
-        gopay: 'gopay',
-        ovo:'ovo'
-      },
-      collapse2:{
-        collapse:2,
-        vamandiri: 'wmandiriva',
-      },
-      collapse3:{
-        collapse:3
-
-      },     
+  payment: {
+    collapse0: {
+      collapse: 0,
     },
-    change_payment:'wmandiriva',
-    booking_code: {
-      ticket: 'BDTR250306D23B',
-      packet: 'PCNX250221OKA5',
+    collapse1: {
+      collapse: 'Payment Method 1',
+      gopay: 'GOPAY',
     },
-    url:{
-      website: 'https://tbk:development@dev2.web.daytrans.asmat.app/',
-      otp: ''
-    }
+    collapse2: {
+      collapse: 'Payment Method 2',
+      vamandiri: 'Mandiri Virtual Account',
+    },
+    collapse3: {
+      collapse: 'Payment Method 3',
+    },
+  },
+  change_payment: 'Mandiri Virtual Account',
+  booking_code: {
+    ticket: 'BDTR250306D23B',
+    packet: 'PCNX250221OKA5',
+  },
+  url: {
+    website: 'https://semerutrans.com',
+    otp: ''
+  }
 };
