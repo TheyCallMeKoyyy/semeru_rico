@@ -33,6 +33,8 @@ async function selectDate(webApp, date) {
     const dateField = webApp.locator(`//input[@name='tglberangkat']`);
     await expect(dateField).toBeVisible();
     await dateField.click();
+    
+    // Next month
     await webApp.locator(`xpath=//span[@class='flatpickr-next-month']//*[name()='svg']`).click();
     await webApp.locator(`xpath=//span[@aria-label='${date}']`).click();
 }
@@ -40,29 +42,36 @@ async function selectDate(webApp, date) {
 // Helper function to input passenger data for multiple passengers
 async function inputAllPassengerData(webApp) {
     const passengers = config.passenger_data.passengers;
-    for (let i=0; i<passengers.length; i++) {
+
+    for (let i = 0; i < passengers.length; i++) {
         const passenger = passengers[i];
 
-        if (i ===0 ) {
+        // Penumpang pertama sekaligus pemesan
+        if (i === 0) {
             await inputPassengerData(
                 webApp,
                 passenger.name,
                 config.passenger_data.booker.email,
                 config.passenger_data.booker.phone_number,
-                config.passenger_data.custName,
+                config.passenger_data.custName
             );
         } else {
+            // Klik tombol "Tambah Penumpang"
             const addBtn = webApp.locator(`xpath=//button[contains(., 'Tambah Penumpang')]`);
             if (await addBtn.isVisible()) {
                 await addBtn.click();
-                await webApp.waitForTimeout(500);
+                await webApp.waitForTimeout(500); // beri jeda biar form baru muncul
             }
-            await webApp.locator(`id=penumpang${i + 1}`).fill(passenger.name);
-        }
 
-        await selectSeat(webApp, passenger.seat_number || (i + 3));
+            // Isi nama penumpang
+            await webApp.locator(`id=penumpang${i + 1}`).fill(passenger.name);
+
+            // Isi jenis kelamin
+            await webApp.locator(`id=gender${i + 1}`).selectOption({ label: passenger.gender });
+        }
     }
 }
+
 
 // Helper function to select passenger count
 async function selectPassenger(webApp, totalPassenger) {
@@ -71,7 +80,8 @@ async function selectPassenger(webApp, totalPassenger) {
         value: 'Select passenger count',
     });
     await webApp.locator(`xpath=//span[normalize-space()='1 Orang']`).click();
-    const passengerCountOption = webApp.locator(`xpath=//div[normalize-space()='${totalPassenger} Orang']`);
+    
+    const passengerCountOption = webApp.locator(`xpath=//div[normalize-space()='2 Orang']`); //Salah di sini
     await expect(passengerCountOption).toBeVisible({ timeout: 3000 });
     await passengerCountOption.click();
 }
@@ -86,19 +96,34 @@ async function selectSchedule(webApp) {
     await scheduleButton.click();
 }
 
+// Helper function to select seat
+async function selectSeat(webApp, seatNumber) {
+    test.info().annotations.push({
+        type: 'allure.step',
+        value: `Pilih kursi ${seatNumber}`,
+    });
+
+    // Ganti XPATH ini sesuai struktur HTML sistem kursi kamu
+    const seatLocator = webApp.locator(`xpath=//div[contains(@class,'seat') and normalize-space()='${seatNumber}']`);
+    
+    await expect(seatLocator).toBeVisible({ timeout: 5000 });
+    await seatLocator.click();
+}
+
 // Helper function to input passenger data
-async function inputPassengerData(webApp, name, email, phoneNumber, custName) {
+async function inputPassengerData(webApp, name, email, phoneNumber, custName, seatNumber) {
     test.info().annotations.push({
         type: 'allure.step',
         value: 'Input passenger details',
     });
-    console.log(config.passenger_data.passengers[0].name)
+    console.log(config.passenger_data.passengers.name)
     await webApp.locator(`xpath=//input[@id='pemesan']`).fill(config.passenger_data.custName); //ini yang aku ubah senseii 
     console.log(config.passenger_data.booker.email) 
     await webApp.locator(`xpath=//input[@placeholder='Masukkan Email']`).fill(config.passenger_data.booker.email);
     console.log(config.passenger_data.booker.phone_number) 
     await webApp.locator(`xpath=//input[@placeholder='Masukkan No. Telpon']`).fill(config.passenger_data.booker.phone_number);
-    
+    await selectSeat(webApp, seatNumber);
+
     //untuk klik checkbox "Pemesan adalah penumpang"
     if(config.passenger_data.cust_name_same != 3){
         await webApp.locator("xpath=//label[@for='samacheck']").click()
@@ -108,8 +133,12 @@ async function inputPassengerData(webApp, name, email, phoneNumber, custName) {
         fill(config.passenger_data.custName)
     }
 
-    //click button "Selanjutnya"
-    await webApp.locator(`//li[1]//div[1]//div[1]//div[2]//button[1]`).click();
+    //click button "pilih alat kelamin"
+    await webApp.locator(`//div[4]//div[2]//div[1]//div[1]//label[1]`).click();
+    await webApp.locator(`//div[6]//div[2]//div[1]//div[1]//label[2]`).click();
+
+    //click tombol "selanjutnya"
+    await webApp.locator(`//button[@id='submit']`).click();
 }
 
 // Helper function to select payment method

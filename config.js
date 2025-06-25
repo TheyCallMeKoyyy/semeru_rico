@@ -9,7 +9,7 @@ export const config = {
       arrival: 'INDOMARET HYBRID-CIKARANG',
       date: 'July 30, 2025',
       return_date: 'July 30, 2025',
-      passenger_count: 3,
+      passenger_count: 2
     },
     otp: '123456',
     passenger_data: {
@@ -20,7 +20,7 @@ export const config = {
             phone_number: '083116912560'
             
         },
-        cust_name_same: 1,
+        cust_name_same: 2,
         custName: "Enricco Zefanya",
         passengers: [
             {
