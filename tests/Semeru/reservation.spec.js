@@ -64,10 +64,10 @@ async function inputAllPassengerData(webApp) {
             }
 
             // Isi nama penumpang
-            await webApp.locator(`id=penumpang${i + 1}`).fill(passenger.name);
+            await webApp.locator(`(//input[@id='penumpang2'])[1]`).fill(passenger.name);
 
             // Isi jenis kelamin
-            await webApp.locator(`id=gender${i + 1}`).selectOption({ label: passenger.gender });
+            await webApp.locator('//div[6]//div[2]//div[1]//div[1]//label[2]').click();
         }
     }
 }
@@ -96,20 +96,6 @@ async function selectSchedule(webApp) {
     await scheduleButton.click();
 }
 
-// Helper function to select seat
-async function selectSeat(webApp, seatNumber) {
-    test.info().annotations.push({
-        type: 'allure.step',
-        value: `Pilih kursi ${seatNumber}`,
-    });
-
-    // Ganti XPATH ini sesuai struktur HTML sistem kursi kamu
-    const seatLocator = webApp.locator(`xpath=//div[contains(@class,'seat') and normalize-space()='${seatNumber}']`);
-    
-    await expect(seatLocator).toBeVisible({ timeout: 5000 });
-    await seatLocator.click();
-}
-
 // Helper function to input passenger data
 async function inputPassengerData(webApp, name, email, phoneNumber, custName, seatNumber) {
     test.info().annotations.push({
@@ -122,10 +108,9 @@ async function inputPassengerData(webApp, name, email, phoneNumber, custName, se
     await webApp.locator(`xpath=//input[@placeholder='Masukkan Email']`).fill(config.passenger_data.booker.email);
     console.log(config.passenger_data.booker.phone_number) 
     await webApp.locator(`xpath=//input[@placeholder='Masukkan No. Telpon']`).fill(config.passenger_data.booker.phone_number);
-    await selectSeat(webApp, seatNumber);
 
     //untuk klik checkbox "Pemesan adalah penumpang"
-    if(config.passenger_data.cust_name_same != 3){
+    if(config.passenger_data.cust_name_same != 2){
         await webApp.locator("xpath=//label[@for='samacheck']").click()
     } else{
          //Input cust name
@@ -141,6 +126,20 @@ async function inputPassengerData(webApp, name, email, phoneNumber, custName, se
     await webApp.locator(`//button[@id='submit']`).click();
 }
 
+// Helper function to select seat
+async function selectSeat(webApp, seatNumber) {
+    test.info().annotations.push({
+        type: 'allure.step',
+        value: `Pilih kursi ${seatNumber}`,
+    });
+
+    // Ganti XPATH ini sesuai struktur HTML sistem kursi kamu
+    const seatLocator = webApp.locator(`xpath=//div[@id='${'4A','2B'}']//p[@class='font-weight-bold']`);
+    
+    await expect(seatLocator).toBeVisible({ timeout: 5000 });
+    await seatLocator.click();
+}
+
 // Helper function to select payment method
 async function selectPayment(webApp, paymentMethod) {
     test.info().annotations.push({
@@ -148,7 +147,7 @@ async function selectPayment(webApp, paymentMethod) {
         value: 'Select payment method',
     });
 
-    const section = webApp.locator(`xpath=//p[normalize-space()='Pilih Metode Pembayaran']`);
+    const section = webApp.locator(`xpath=//img[@alt='Mandiri Virtual Account']`);
     await section.click(); // expand first
 
     // const option = webApp.locator(`xpath=//p[normalize-space()='Pembayaran Instan']`);

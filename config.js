@@ -20,7 +20,7 @@ export const config = {
             phone_number: '083116912560'
             
         },
-        cust_name_same: 2,
+        cust_name_same: 3,
         custName: "Enricco Zefanya",
         passengers: [
             {
@@ -33,11 +33,6 @@ export const config = {
                 gender: "Perempuan",
                 seat_number: "4",
             },
-            {
-                name: "Stanny Bellinda",
-                gender: "Perempuan",
-                seat_number: "5",
-            }
         ]
     },
     voucher:{
