@@ -1,0 +1,203 @@
+# Page snapshot
+
+```yaml
+- navigation:
+  - link:
+    - /url: https://www.semerutrans.com
+    - img
+  - list:
+    - listitem:
+      - link "Beranda (current)":
+        - /url: https://www.semerutrans.com
+    - listitem:
+      - link "Cara Bayar":
+        - /url: https://www.semerutrans.com/pembayaran
+    - listitem:
+      - link "Tentang":
+        - /url: https://www.semerutrans.com/tentang
+    - listitem:
+      - link "Outlet":
+        - /url: https://www.semerutrans.com/outlet
+    - listitem:
+      - link "Galeri":
+        - /url: https://www.semerutrans.com/galeri
+    - listitem:
+      - link "Berita":
+        - /url: https://www.semerutrans.com/berita
+    - listitem:
+      - link "Lacak Paket":
+        - /url: https://www.semerutrans.com/paket/cekpaket
+  - link "Cek Tiket":
+    - /url: https://www.semerutrans.com/book/cekbook
+  - list:
+    - listitem:
+      - link " Masuk":
+        - /url: https://www.semerutrans.com/otp/login
+- paragraph: Step 1
+- paragraph: Pilih Jadwal
+- paragraph: Step 2
+- paragraph: Data Pemesan
+- paragraph: Step 3
+- paragraph: Pilih Kursi
+- paragraph: Step 4
+- paragraph: Pembayaran
+- link "KOPI KENANGAN PARUNG INDOMARET HYBRID-CIKARANG  30-07-2025" [expanded]:
+  - /url: "#resdet"
+  - paragraph: KOPI KENANGAN PARUNG INDOMARET HYBRID-CIKARANG 
+  - paragraph: 30-07-2025
+- paragraph: Keberangkatan & Tujuan
+- text: KOPI KENANGAN PARUNG JL RAYA PARUNG NO667, PARUNG, KEC PARUNG, KABUPATEN BOGOR, JAWABARAT16330
+- link " Lihat Lokasi":
+  - /url: https://maps.app.goo.gl/8LgE2sTw2naiMmrh6
+- text: INDOMARET HYBRID-CIKARANG JALAN PASIR KONCI RT 1705 NO50 DESA PASIR SARI KEC KOTAKABUPATEN KAB, CIANTRA, CIKARANG SEL, KABUPATEN BEKASI, JAWA BARAT 17530
+- link " Lihat Lokasi":
+  - /url: https://maps.app.goo.gl/Mo36ZSkkDc75Mgq2A
+- paragraph: Tanggal & Jam
+- paragraph:  30-07-2025
+- paragraph:  16:30
+- paragraph: Penumpang & Harga
+- paragraph: 2 Orang
+- paragraph:  Rp 700,000
+- link "Detail Penumpang " [expanded]:
+  - /url: "#resdet2"
+  - paragraph: Detail Penumpang 
+- heading [level=4]
+- table:
+  - rowgroup:
+    - row "SUPIR":
+      - cell
+      - cell
+      - cell
+      - cell
+      - cell "SUPIR":
+        - paragraph: SUPIR
+    - row "SC 1A 350,000 SC 1B 350,000 SC 2A 350,000 male 2B":
+      - cell "SC 1A 350,000":
+        - paragraph: SC 1A 350,000
+      - cell "SC 1B 350,000":
+        - paragraph: SC 1B 350,000
+      - cell
+      - cell "SC 2A 350,000":
+        - paragraph: SC 2A 350,000
+      - cell "male 2B":
+        - img "male"
+        - paragraph: 2B
+    - row "SC 3A 350,000 SC 3B 350,000 perempuan 4A SC 4B 350,000":
+      - cell "SC 3A 350,000":
+        - paragraph: SC 3A 350,000
+      - cell "SC 3B 350,000":
+        - paragraph: SC 3B 350,000
+      - cell
+      - cell "perempuan 4A":
+        - img "perempuan"
+        - paragraph: 4A
+      - cell "SC 4B 350,000":
+        - paragraph: SC 4B 350,000
+    - row "SC 5A 350,000 SC 5B 350,000 SC 6A 350,000 SC 6B 350,000":
+      - cell "SC 5A 350,000":
+        - paragraph: SC 5A 350,000
+      - cell "SC 5B 350,000":
+        - paragraph: SC 5B 350,000
+      - cell
+      - cell "SC 6A 350,000":
+        - paragraph: SC 6A 350,000
+      - cell "SC 6B 350,000":
+        - paragraph: SC 6B 350,000
+    - row "SC 7A 350,000 SC 7B 350,000 SC 8A 350,000 SC 8B 350,000":
+      - cell "SC 7A 350,000":
+        - paragraph: SC 7A 350,000
+      - cell "SC 7B 350,000":
+        - paragraph: SC 7B 350,000
+      - cell
+      - cell "SC 8A 350,000":
+        - paragraph: SC 8A 350,000
+      - cell "SC 8B 350,000":
+        - paragraph: SC 8B 350,000
+    - row "SC 9A 350,000 SC 9B 350,000 SC 10A 350,000 SC 10B 350,000":
+      - cell "SC 9A 350,000":
+        - paragraph: SC 9A 350,000
+      - cell "SC 9B 350,000":
+        - paragraph: SC 9B 350,000
+      - cell
+      - cell "SC 10A 350,000":
+        - paragraph: SC 10A 350,000
+      - cell "SC 10B 350,000":
+        - paragraph: SC 10B 350,000
+    - row "SC 11A 350,000 SC 11B 350,000":
+      - cell
+      - cell
+      - cell
+      - cell "SC 11A 350,000":
+        - paragraph: SC 11A 350,000
+      - cell "SC 11B 350,000":
+        - paragraph: SC 11B 350,000
+- paragraph: Sudah di booking
+- paragraph:
+  - img
+  - text: Perempuan
+- paragraph: Pilihan Anda
+- paragraph:
+  - img
+  - text: Laki Laki
+- paragraph: Kosong
+- text: SC SUITES CLASS
+- paragraph:
+  - strong: Catatan
+  - text: Kursi sewaktu-waktu dapat dipesan oleh pengguna lain yang terlebih dahulu menyelesaikan pembeliannya.
+- heading "Total Rp. 0" [level=4]
+- paragraph
+- button "Sebelumnya"
+- button "Selanjutnya"
+- heading "SEMERU" [level=5]:
+  - strong: SEMERU
+- list:
+  - listitem:
+    - paragraph:
+      - link "Tentang":
+        - /url: https://www.semerutrans.com/tentang
+  - listitem:
+    - paragraph:
+      - link "Outlet":
+        - /url: https://www.semerutrans.com/outlet
+  - listitem:
+    - paragraph:
+      - link "Galeri":
+        - /url: https://www.semerutrans.com/galeri
+- heading "Kontak Kami" [level=5]:
+  - strong: Kontak Kami
+- list:
+  - listitem:
+    - paragraph:
+      - link " 0856 4332 2355 (Jombor)":
+        - /url: https://wa.me/6285643322355
+  - listitem:
+    - paragraph:
+      - link " 0857 8635 1255 (Siliwangi)":
+        - /url: https://wa.me/6285786351255
+  - listitem:
+    - paragraph:
+      - link " 0856 4787 4505 (Majapahit)":
+        - /url: https://wa.me/6285647874505
+  - listitem:
+    - paragraph:
+      - link " 0858 6919 98455 (Pati)":
+        - /url: https://wa.me/6285869199845
+  - listitem:
+    - paragraph:
+      - link " 0858 6919 9850 (Seturan)":
+        - /url: https://wa.me/6285869199850
+  - listitem:
+    - paragraph:  024-6718304 (Panggilan Telepon)
+- heading "Sosial Media" [level=5]:
+  - strong: Sosial Media
+- list:
+  - listitem:
+    - paragraph:
+      - link "facebook":
+        - /url: https://www.facebook.com/people/Semerutransindoshuttle/100074156326255/
+  - listitem:
+    - paragraph:
+      - link "Instagram":
+        - /url: https://www.instagram.com/semerutrans.shuttle/?hl=id
+- button " Tanya Admin"
+```

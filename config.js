@@ -26,12 +26,12 @@ export const config = {
             {
                 name: "Enricco Zefanya",
                 gender: "laki-laki",
-                seat_number: "3",
+                seat_number: "2B",
             },
             {
-                name: "Setly Boyoh",
+                name: "Stanny Bellinda",
                 gender: "Perempuan",
-                seat_number: "4",
+                seat_number: "4A",
             },
         ]
     },
