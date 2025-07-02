@@ -62,7 +62,7 @@ export const config = {
     packet: 'PCNX250221OKA5',
   },
   url: {
-    website: 'https://baraya-travel.com',
+    website: 'https://aragontrans.com',
     otp: ''
   }
 };

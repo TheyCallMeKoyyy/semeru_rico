@@ -1,0 +1,74 @@
+# Page snapshot
+
+```yaml
+- navigation:
+  - link:
+    - /url: https://www.aragontrans.com
+  - list:
+    - listitem:
+      - link "Home (current)":
+        - /url: https://www.aragontrans.com
+    - listitem:
+      - link "Tentang":
+        - /url: https://www.aragontrans.com/tentang
+    - listitem:
+      - link "Blog":
+        - /url: https://www.aragontrans.com/blog
+    - listitem:
+      - link "Layanan":
+        - /url: https://www.aragontrans.com/layanan
+    - listitem:
+      - link "Syarat Ketentuan ":
+        - /url: https://www.aragontrans.com/snk
+    - listitem:
+      - link "Outlet":
+        - /url: https://www.aragontrans.com/outlet
+    - listitem:
+      - link "Cara Bayar":
+        - /url: https://www.aragontrans.com/bayar
+    - listitem:
+      - link "Lainnya ":
+        - /url: https://www.aragontrans.com/bayar
+    - listitem:
+      - link "Karir":
+        - /url: https://www.aragontrans.com/karir
+  - list:
+    - listitem:
+      - button "Login & Sign Up"
+- heading "Detail Paket Anda" [level=2]
+- heading "Detail Paket Tidak Ada !" [level=3]
+- contentinfo:
+  - paragraph:
+    - link:
+      - /url: https://www.aragontrans.com
+      - img
+  - paragraph: Copyright © 2022 Aragon Transport
+  - paragraph: All Rights Reserved
+  - link " @Aragontrans":
+    - /url: https://www.instagram.com/aragontrans/
+    - text: 
+    - paragraph: "@Aragontrans"
+  - link " Aragon Transport":
+    - /url: https://www.facebook.com/aragontranport/?locale=id_ID
+    - text: 
+    - paragraph: Aragon Transport
+  - paragraph: Lainnya
+  - paragraph:
+    - link "Beranda":
+      - /url: https://www.aragontrans.com
+  - paragraph:
+    - link "Layanan":
+      - /url: https://www.aragontrans.com/layanan
+  - paragraph:
+    - link "Outlet":
+      - /url: https://www.aragontrans.com/outlet
+  - paragraph:
+    - link "Cara Bayar":
+      - /url: https://www.aragontrans.com/bayar
+  - paragraph:
+    - link "Kebijakan Privasi":
+      - /url: https://www.aragontrans.com/kebijakan-privasi
+  - paragraph: Call Center
+  - paragraph: 0811 2323 600
+  - paragraph: (Aktif 24 Jam)
+```
