@@ -5,10 +5,10 @@ export const config = {
       password: 'development',
     },
     journey: {
-      departure: 'KOPI KENANGAN PARUNG',
-      arrival: 'INDOMARET HYBRID-CIKARANG',
-      date: 'July 30, 2025',
-      return_date: 'July 30, 2025',
+      departure: 'M.TOHA',
+      arrival: 'CIBUBUR2',
+      date: 'August 30, 2025',
+      return_date: 'September 30, 2025',
       passenger_count: 2
     },
     otp: '123456',
@@ -62,7 +62,7 @@ export const config = {
     packet: 'PCNX250221OKA5',
   },
   url: {
-    website: 'https://semerutrans.com',
-    otp: '123456'
+    website: 'https://baraya-travel.com',
+    otp: ''
   }
 };
