@@ -9,15 +9,15 @@ async function checkBookingCode(webApp, codeBooking) {
         value: 'Check Booking Code',
     });
 
-    const codeBookingPath = webApp.locator("xpath=//a[normalize-space()='Cek Booking']")
+    const codeBookingPath = webApp.locator("xpath=(//a[normalize-space()='Lacak Paket'])[1]")
     await expect(codeBookingPath).toBeVisible({timeout: 1000})
 
     if(codeBooking != ''){
         await codeBookingPath.click()
         console.log(`Code Booking ${codeBooking}`)
-        await webApp.locator("xpath=//input[@placeholder='Masukan Kode Booking Anda !']").
+        await webApp.locator("xpath=(//input[@placeholder='Masukan Kode Disini'])[1]").
         fill(codeBooking)
-        await webApp.locator("xpath=//button[normalize-space()='KIRIM']").click()
+        await webApp.locator("xpath=(//button[normalize-space()='Cek Paket'])[1]").click()
         // Get the current URL after navigation
         const currentUrl = webApp.url();
         console.log(`Url: ${currentUrl}`)

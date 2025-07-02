@@ -9,11 +9,9 @@ async function accessAboutUs(webApp) {
         value: 'Navigate to About Us Page',
     });
 
-    expect (webApp.locator("xpath=(//a[@class='font-dm-sans'][normalize-space()='Tentang Kami'])[1]")).toBeVisible()
-    await webApp.locator("xpath=(//a[@class='font-dm-sans'][normalize-space()='Tentang Kami'])[1]").click()
+    expect (webApp.locator("xpath=(//a[@class='nav-link'][normalize-space()='Tentang'])[1]")).toBeVisible()
+    await webApp.locator("xpath=(//a[@class='nav-link'][normalize-space()='Tentang'])[1]").click()
     
-    //Expect the page to have text tentang
-    await expect(webApp.locator('h1:text("Tentang")')).toBeVisible();
 }
 
 

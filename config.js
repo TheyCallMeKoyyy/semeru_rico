@@ -63,6 +63,6 @@ export const config = {
   },
   url: {
     website: 'https://semerutrans.com',
-    otp: ''
+    otp: '123456'
   }
 };

@@ -9,28 +9,28 @@ async function login(webApp) {
         value: 'Navigate to login page',
     });
     // Click button to login page
-    await webApp.locator("xpath=(//a[@class='btn-login'][normalize-space()='Login'])[1]").click();
+    await webApp.locator("xpath=(//a[normalize-space()='Masuk'])[1]").click();
 
     test.info().annotations.push({
         type: 'allure.step',
         value: 'Click to show phone number field',
     });
     // Click button to appear field on phone number
-    await webApp.locator("xpath=//button[normalize-space()='Dengan Nomor Telepon']").click();
+    await webApp.locator("xpath=(//button[normalize-space()='Nomor Telepon'])[1]").click();
 
     test.info().annotations.push({
         type: 'allure.step',
         value: 'Input phone number',
     });
     // Input phone number
-    await webApp.locator("id=no_telepon").fill(config.passengerData.phoneNumber);
+    await webApp.locator("id=no_telepon").fill(config.passenger_data.booker.phone_number);
 
     test.info().annotations.push({
         type: 'allure.step',
         value: 'Submit phone number',
     });
     // Submit phone number
-    await webApp.locator("xpath=//button[@class='btn btn-block btn-primary ']").click();
+    await webApp.locator("xpath=(//button[@class='btn btn-block color-primary'])[1]").click();
 
     await webApp.waitForTimeout(50000); // Fixed typo from waitForTimeOut to waitForTimeout
 
@@ -52,7 +52,7 @@ async function login(webApp) {
         value: 'Submit OTP',
     });
     // Submit OTP
-    await webApp.locator("xpath=//button[@class='btn btn-block btn-primary']").click();
+    await webApp.locator("xpath=(//button[@class='btn btn-block color-primary h-100'])[1]").click();
 }
 
 // Helper function to get OTP from API
@@ -64,7 +64,7 @@ async function getOtpFromApi() {
             {
                 // Request body
                 tipe: 'otp-sms',
-                telp: config.passengerData.phoneNumber,
+                telp: config.passenger_data.booker.phone_number,
             },
             {
                 headers: {

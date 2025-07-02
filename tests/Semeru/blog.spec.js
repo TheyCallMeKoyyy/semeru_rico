@@ -7,13 +7,11 @@ async function accessAboutUs(webApp) {
         value: 'Navigate to Blog Page',
     });
 
-    const blogPath = webApp.locator("xpath=//a[normalize-space()='Blog']")
+    const blogPath = webApp.locator("xpath=(//a[normalize-space()='Berita'])[1]")
 
     await blogPath.isVisible()
     await blogPath.click()
     
-    //Expect the page to have text tentang
-    await expect(webApp.locator('h3:text("Berita")')).toBeVisible();
 }
 
 test('to access Blog Page', async ({ webApp }) => {

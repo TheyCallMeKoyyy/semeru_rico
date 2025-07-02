@@ -9,7 +9,7 @@ async function cekTracking(webApp, codeBooking) {
     });
 
     try {
-        await webApp.locator("xpath=//a[normalize-space()='Lacak Paket']").click();
+        await webApp.locator("xpath=(//a[normalize-space()='Cek Tiket'])[1]").click();
         await webApp.locator('[name="noresi"]').fill(codeBooking);
         await webApp.locator("css=button[type='submit']").click();
     } catch (error) {

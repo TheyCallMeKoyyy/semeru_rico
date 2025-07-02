@@ -8,7 +8,7 @@ async function accessHowToPay(webApp, codeBooking) {
         type: 'allure.step',
         value: 'Navigate to how to pay page',
     });
-    await webApp.locator("xpath=//a[normalize-space()='Cara Bayar']").click();
+    await webApp.locator("xpath=(//a[normalize-space()='Cara Bayar'])[1]").click();
 
      //Expect the page to have text Metode Pembayaran
     await expect(webApp.locator('h4:text("Metode Pembayaran") >> nth=0')).toBeVisible();
