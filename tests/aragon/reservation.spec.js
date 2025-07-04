@@ -8,9 +8,9 @@ async function pickDeparture(webApp, departure) {
         type: 'allure.step',
         value: 'Pick departure',
     });
-    await expect(webApp.locator(`xpath=//span[normalize-space()='ANTAPANI']`)).toBeVisible();
-    await webApp.locator(`xpath=//span[normalize-space()='ANTAPANI']`).click();
-    await webApp.locator(`xpath=//div[normalize-space()='M.TOHA']`).click();
+    await expect(webApp.locator(`xpath=(//div[@class='col-11'])[1]`)).toBeVisible();
+    await webApp.locator(`xpath=(//span[@class='badge-kota text-lowercase pcapital cursorpointer'][normalize-space()='BANDUNG'])[1]`).click();
+    await webApp.locator(`xpath=(//span[@class='badge-kota text-lowercase pcapital cursorpointer'][normalize-space()='BANDUNG'])[1]`).click();
 }
 
 // Helper function to pick arrival
@@ -19,9 +19,9 @@ async function pickArrival(webApp, arrival) {
         type: 'allure.step',
         value: 'Pick arrival',
     });
-    await expect(webApp.locator(`xpath=//span[normalize-space()='BEKASI1']`)).toBeVisible();
-    await webApp.locator(`xpath=//span[normalize-space()='BEKASI1']`).click();
-    await webApp.locator(`xpath=//div[contains(@class,'ss-content ss-open')]//div[contains(@class,'ss-option')][normalize-space()='CIBUBUR2']`).click();
+    await expect(webApp.locator(`xpath=(//div[@id='dropdownMenuButton2'])[1]    `)).toBeVisible();
+    await webApp.locator(`xpath=(//span[@class='badge-kota text-lowercase pcapital cursorpointer'][normalize-space()='JAKARTA'])[2]`).click();
+    await webApp.locator(`xpath=(//span[@class='badge-kota text-lowercase pcapital cursorpointer'][normalize-space()='JAKARTA'])[2]`).click();
 }
 
 // Helper function to select date
@@ -30,7 +30,7 @@ async function selectDate(webApp, date) {
         type: 'allure.step',
         value: 'Select travel date',
     });
-    const dateField = webApp.locator(`//input[@id='tanggal']`);
+    const dateField = webApp.locator(`//input[@id='tgl_berangkat']`);
     await expect(dateField).toBeVisible();
     await dateField.click();
     
@@ -125,7 +125,7 @@ async function inputPassengerData(webApp, name, email, phoneNumber, custName, se
     //await webApp.locator(`//div[6]//div[2]//div[1]//div[1]//label[2]`).click();
 
     //click tombol "selanjutnya"
-    await webApp.locator(`(//button[normalize-space()='Pilih Kursi'])[1]`).click();
+    await webApp.locator(`(//button[normalize-space()='Selanjutnya'])[1]`).click();
 }
 
 // Helper function to select seat
@@ -136,13 +136,13 @@ async function selectSeat(webApp, seatNumber) {
     });
 
     // Ganti XPATH ini sesuai struktur HTML sistem kursi kamu
-    const seatLocator = webApp.locator(`xpath=//div[@id='4']//p[1]`);
+    const seatLocator = webApp.locator(`xpath=//div[@id='2']//p[@class='text-center']`);
     
     await expect(seatLocator).toBeVisible({ timeout: 5000 });
     await seatLocator.click();
 
     //Klik Selanjutnya Untuk Ke Page Pembayaran
-    await webApp.locator(`(//button[normalize-space()='pembayaran'])[1]`).click();
+    await webApp.locator(`(//button[normalize-space()='Selanjutnya'])[1]`).click();
 }
 
 // Helper function to select payment method
@@ -209,7 +209,7 @@ test('reservation', async ({ webApp }) => {
     //}
     
     // Search for available schedules
-    await webApp.locator("xpath=(//button[normalize-space()='CARI TIKET'])[1]").click();
+    await webApp.locator("xpath=(//a[@class='btn bg-red text-white btn-radius mb-0 px-3'][normalize-space()='Pilih'])[1]").click();
     
     // Select a schedule
     await selectSchedule(webApp);

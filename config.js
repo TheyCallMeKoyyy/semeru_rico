@@ -5,9 +5,9 @@ export const config = {
       password: 'development',
     },
     journey: {
-      departure: 'M.TOHA',
-      arrival: 'CIBUBUR2',
-      date: 'August 30, 2025',
+      departure: 'BANDUNG',
+      arrival: 'JAKARTA',
+      date: 'September 30, 2025',
       return_date: 'September 30, 2025',
       passenger_count: 2
     },
