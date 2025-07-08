@@ -1,6 +1,10 @@
 const { config } = require('../../config');
 const { test, expect } = require('../setup');
 
+/**
+ * @description Mengakses halaman "Syarat Ketentuan Penumpang" dari tautan Privacy & Policy.
+ * @param {import('@playwright/test').Page} webApp - Instance halaman web Playwright.
+ */
 
 // Helper function to check booking
 async function accessPrivacyPolicy(webApp) {
@@ -12,6 +16,9 @@ async function accessPrivacyPolicy(webApp) {
     await webApp.locator("xpath=(//a[normalize-space()='Syarat Ketentuan Penumpang'])[1]").click();
 }
 
+/**
+ * @description Pengujian akses ke halaman kebijakan privasi dan ketentuan penumpang.
+ */
 
 // Main test
 test('to Access Privacy Policy Page', async ({ webApp }) => {

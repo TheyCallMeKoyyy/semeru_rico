@@ -1,7 +1,10 @@
 const { config } = require('../../config');
 const { test, expect } = require('../setup');
 
-
+/**
+ * @description Mengakses halaman "Tentang Kami" dari menu navigasi.
+ * @param {import('@playwright/test').Page} webApp - Instance halaman web Playwright.
+ */
 
 async function accessAboutUs(webApp) {
     test.info().annotations.push({
@@ -14,6 +17,9 @@ async function accessAboutUs(webApp) {
     
 }
 
+/**
+ * @description Pengujian akses ke halaman Tentang Kami menggunakan Playwright.
+ */
 
 test('to access About Us Page', async ({ webApp }) => {
     // Add Allure Labels for categorizing in the report

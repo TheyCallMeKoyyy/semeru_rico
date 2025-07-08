@@ -1,6 +1,11 @@
 const { config } = require('../../config');
 const { test, expect } = require('../setup');
 
+/**
+ * @description Mengakses halaman "Cara Bayar" dari navigasi utama.
+ * @param {import('@playwright/test').Page} webApp - Instance halaman web Playwright.
+ * @param {string} codeBooking - Kode booking (parameter tidak digunakan dalam fungsi).
+ */
 
 // Helper function to check booking
 async function accessHowToPay(webApp, codeBooking) {
@@ -12,6 +17,9 @@ async function accessHowToPay(webApp, codeBooking) {
 
 }
 
+/**
+ * @description Pengujian akses halaman "Cara Bayar" pada platform web.
+ */
 
 // Main test
 test('Access How to Pay page', async ({ webApp }) => {

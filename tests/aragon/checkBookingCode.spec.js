@@ -2,6 +2,12 @@ const { channel } = require('diagnostics_channel');
 const { config } = require('../../config');
 const { test, expect } = require('../setup');
 
+/**
+ * @description Mengecek kode booking yang dimasukkan oleh pengguna melalui form "Cek Booking".
+ * @param {import('@playwright/test').Page} webApp - Instance halaman web Playwright.
+ * @param {string} codeBooking - Kode booking yang ingin diperiksa.
+ */
+
 // Helper function to use voucher
 async function checkBookingCode(webApp, codeBooking) {
     test.info().annotations.push({
@@ -34,6 +40,10 @@ async function checkBookingCode(webApp, codeBooking) {
     }
     
 }
+
+/**
+ * @description Pengujian fitur pengecekan kode booking dengan menggunakan data dari konfigurasi.
+ */
 
 // Main test
 test('Check booking code', async ({ webApp }) => {

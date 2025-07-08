@@ -2,6 +2,11 @@ const { config } = require('../../config');
 const { test, expect } = require('../setup');
 const axios = require('axios');
 
+/**
+ * @description Proses login pengguna menggunakan nomor telepon dan OTP.
+ * @param {import('@playwright/test').Page} webApp - Instance halaman web Playwright.
+ */
+
 // Helper function to login
 async function login(webApp) {
     test.info().annotations.push({
@@ -55,6 +60,12 @@ async function login(webApp) {
     await webApp.locator("xpath=(//button[@class='btn btn-block color-primary h-100'])[1]").click();
 }
 
+/**
+ * @description Mengambil OTP dari API menggunakan Axios.
+ * @returns {Promise<string>} OTP yang diterima dari server.
+ * @throws {Error} Jika gagal mengambil OTP.
+ */
+
 // Helper function to get OTP from API
 async function getOtpFromApi() {
     try {
@@ -82,6 +93,10 @@ async function getOtpFromApi() {
         throw error; // Handle the error appropriately
     }
 }
+
+/**
+ * @description Pengujian proses login menggunakan OTP dan nomor telepon.
+ */
 
 // Main test
 test('Login', async ({ webApp }) => {

@@ -2,6 +2,12 @@ const { channel } = require('diagnostics_channel');
 const { config } = require('../../config');
 const { test, expect } = require('../setup');
 
+/**
+ * @description Memilih kota keberangkatan dari dropdown.
+ * @param {import('@playwright/test').Page} webApp - Instance halaman web Playwright.
+ * @param {string} departure - Nama kota keberangkatan.
+ */
+
 // Helper function to pick departure
 async function pickDeparture(webApp, departure) {
     test.info().annotations.push({
@@ -13,6 +19,12 @@ async function pickDeparture(webApp, departure) {
     await webApp.locator(`xpath=(//span[@class='badge-kota text-lowercase pcapital cursorpointer'][normalize-space()='BANDUNG'])[1]`).click();
 }
 
+/**
+ * @description Memilih kota tujuan dari dropdown.
+ * @param {import('@playwright/test').Page} webApp - Instance halaman web Playwright.
+ * @param {string} arrival - Nama kota tujuan.
+ */
+
 // Helper function to pick arrival
 async function pickArrival(webApp, arrival) {
     test.info().annotations.push({
@@ -23,6 +35,12 @@ async function pickArrival(webApp, arrival) {
     await webApp.locator(`xpath=(//span[@class='badge-kota text-lowercase pcapital cursorpointer'][normalize-space()='JAKARTA'])[2]`).click();
     await webApp.locator(`xpath=(//span[@class='badge-kota text-lowercase pcapital cursorpointer'][normalize-space()='JAKARTA'])[2]`).click();
 }
+
+/**
+ * @description Memilih tanggal keberangkatan dari date picker.
+ * @param {import('@playwright/test').Page} webApp - Instance halaman web Playwright.
+ * @param {string} date - Tanggal keberangkatan (format: 'DD MMMM YYYY').
+ */
 
 // Helper function to select date
 async function selectDate(webApp, date) {
@@ -40,6 +58,10 @@ async function selectDate(webApp, date) {
     
 }
 
+/**
+ * @description Memasukkan data semua penumpang berdasarkan konfigurasi.
+ * @param {import('@playwright/test').Page} webApp - Instance halaman web Playwright.
+ */
 
 // Helper function to input passenger data for multiple passengers
 async function inputAllPassengerData(webApp) {
@@ -74,6 +96,11 @@ async function inputAllPassengerData(webApp) {
     }
 }
 
+/**
+ * @description Memilih jumlah penumpang (opsional, tergantung UI).
+ * @param {import('@playwright/test').Page} webApp - Instance halaman web Playwright.
+ * @param {number} totalPassenger - Jumlah total penumpang.
+ */
 
 // Helper function to select passenger count
 async function selectPassenger(webApp, totalPassenger) {
@@ -88,6 +115,11 @@ async function selectPassenger(webApp, totalPassenger) {
     //await passengerCountOption.click();
 }
 
+/**
+ * @description Memilih jadwal keberangkatan dari daftar.
+ * @param {import('@playwright/test').Page} webApp - Instance halaman web Playwright.
+ */
+
 // Helper function to select schedule
 async function selectSchedule(webApp) {
     test.info().annotations.push({
@@ -97,6 +129,16 @@ async function selectSchedule(webApp) {
     const scheduleButton = webApp.locator(`xpath=(//button[@class='btn bg-blue text-white fs-14 py-2 px-5 br-6'][normalize-space()='Pilih'])[1]`);
     await scheduleButton.click();
 }
+
+/**
+ * @description Mengisi data pemesan dan/atau penumpang pertama.
+ * @param {import('@playwright/test').Page} webApp - Instance halaman web Playwright.
+ * @param {string} name - Nama penumpang.
+ * @param {string} email - Email pemesan.
+ * @param {string} phoneNumber - Nomor telepon pemesan.
+ * @param {string} custName - Nama pelanggan utama.
+ * @param {string} [seatNumber] - Nomor kursi (opsional).
+ */
 
 // Helper function to input passenger data
 async function inputPassengerData(webApp, name, email, phoneNumber, custName, seatNumber) {
@@ -128,6 +170,12 @@ async function inputPassengerData(webApp, name, email, phoneNumber, custName, se
     await webApp.locator(`(//button[normalize-space()='Selanjutnya'])[1]`).click();
 }
 
+/**
+ * @description Memilih kursi dari layout kursi di UI.
+ * @param {import('@playwright/test').Page} webApp - Instance halaman web Playwright.
+ * @param {string} seatNumber - Nomor kursi yang akan dipilih.
+ */
+
 // Helper function to select seat
 async function selectSeat(webApp, seatNumber) {
     test.info().annotations.push({
@@ -144,6 +192,12 @@ async function selectSeat(webApp, seatNumber) {
     //Klik Selanjutnya Untuk Ke Page Pembayaran
     await webApp.locator(`(//button[normalize-space()='Selanjutnya'])[1]`).click();
 }
+
+/**
+ * @description Memilih metode pembayaran dari halaman pembayaran.
+ * @param {import('@playwright/test').Page} webApp - Instance halaman web Playwright.
+ * @param {string} paymentMethod - Nama metode pembayaran (contoh: 'Gopay').
+ */
 
 // Helper function to select payment method
 async function selectPayment(webApp, paymentMethod) {
@@ -163,6 +217,11 @@ async function selectPayment(webApp, paymentMethod) {
     await payment.click(config.payment.collapse1);
 }
 
+/**
+ * @description Menyetujui syarat & ketentuan lalu klik submit.
+ * @param {import('@playwright/test').Page} webApp - Instance halaman web Playwright.
+ */
+
 // Helper function to checking button syarat n ketentuan
 async function checkingTnc(webApp) {
     const tncButton = webApp.locator(`xpath=//label[contains(text(),'Silahkan tandai kotak ini sebagai bukti bahwa anda')]`);
@@ -170,6 +229,10 @@ async function checkingTnc(webApp) {
 
     await webApp.locator(`xpath=//button[@id='submit']`).click();
 }
+
+/**
+ * @description Main test untuk menjalankan alur penuh proses reservasi.
+ */
 
 // Main test
 test('reservation', async ({ webApp }) => {
