@@ -2,31 +2,29 @@ const { config } = require('../../config');
 const { test, expect } = require('../setup');
 
 /**
- * @description Mengakses halaman "Cara Bayar" dari navigasi utama.
+ * @description Mengakses halaman Syarat & Ketentuan dan Paket melalui tautan di website.
  * @param {import('@playwright/test').Page} webApp - Instance halaman web Playwright.
- * @param {string} codeBooking - Kode booking (parameter tidak digunakan dalam fungsi).
  */
 
 // Helper function to check booking
-async function accessHowToPay(webApp, codeBooking) {
+async function accessPrivacyPolicy(webApp) {
     test.info().annotations.push({
         type: 'allure.step',
-        value: 'Navigate to how to pay page',
+        value: 'Navigate to Privacy and Policy',
     });
-    await webApp.locator("xpath=(//a[contains(@class,'fs-14')][normalize-space()='Cara Bayar'])[1]").click();
-
+    await webApp.locator("xpath=(//a[@class='nav-item nav-link fs-16 text-black pr-4'][normalize-space()='Ketentuan'])[1]").click();
 }
 
 /**
- * @description Pengujian akses halaman "Cara Bayar" pada platform web.
+ * @description Pengujian untuk mengakses halaman Kebijakan Privasi & Syarat Ketentuan.
  */
 
 // Main test
-test('Access How to Pay page', async ({ webApp }) => {
+test('to Access Privacy Policy Page', async ({ webApp }) => {
     // Add Allure Labels for categorizing in the report
     test.info().annotations.push({
         type: 'allure.label',
-        value: 'feature: how to pay page',
+        value: 'feature: Privacy and Policy',
     });
     test.info().annotations.push({
         type: 'allure.label',
@@ -42,5 +40,5 @@ test('Access How to Pay page', async ({ webApp }) => {
     });
 
     // Start the Change Payment Method process
-    await accessHowToPay(webApp);
+    await accessPrivacyPolicy(webApp);
 });

@@ -8,7 +8,7 @@ export const config = {
       departure: 'BANDUNG',
       arrival: 'JAKARTA',
       date: 'September 30, 2025',
-      return_date: 'September 30, 2025',
+      returnDate: 'September 30, 2025',
       passenger_count: 2
     },
     otp: '123456',
@@ -62,7 +62,7 @@ export const config = {
     packet: 'PCNX250221OKA5',
   },
   url: {
-    website: 'https://aragontrans.com',
+    website: 'https://booking.sabilashuttle.co.id/',
     otp: ''
   }
 };

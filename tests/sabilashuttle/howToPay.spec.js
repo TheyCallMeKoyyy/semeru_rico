@@ -2,30 +2,31 @@ const { config } = require('../../config');
 const { test, expect } = require('../setup');
 
 /**
- * @description Mengakses halaman Syarat & Ketentuan dan Paket melalui tautan di website.
+ * @description Mengakses halaman "Cara Bayar" dari navigasi utama.
  * @param {import('@playwright/test').Page} webApp - Instance halaman web Playwright.
+ * @param {string} codeBooking - Kode booking (parameter tidak digunakan dalam fungsi).
  */
 
 // Helper function to check booking
-async function accessPrivacyPolicy(webApp) {
+async function accessHowToPay(webApp, codeBooking) {
     test.info().annotations.push({
         type: 'allure.step',
-        value: 'Navigate to Privacy and Policy',
+        value: 'Navigate to how to pay page',
     });
-    await webApp.locator("xpath=(//a[@href='https://www.aragontrans.com/snk'])[1]").click();
-    await webApp.locator("xpath=(//a[normalize-space()='Syarat Ketentuan Paket'])[1]").click();
+    await webApp.locator("xpath=//a[normalize-space()='Cara Bayar']").click();
+
 }
 
 /**
- * @description Pengujian untuk mengakses halaman Kebijakan Privasi & Syarat Ketentuan.
+ * @description Pengujian akses halaman "Cara Bayar" pada platform web.
  */
 
 // Main test
-test('to Access Privacy Policy Page', async ({ webApp }) => {
+test('Access How to Pay page', async ({ webApp }) => {
     // Add Allure Labels for categorizing in the report
     test.info().annotations.push({
         type: 'allure.label',
-        value: 'feature: Privacy and Policy',
+        value: 'feature: how to pay page',
     });
     test.info().annotations.push({
         type: 'allure.label',
@@ -41,5 +42,5 @@ test('to Access Privacy Policy Page', async ({ webApp }) => {
     });
 
     // Start the Change Payment Method process
-    await accessPrivacyPolicy(webApp);
+    await accessHowToPay(webApp);
 });

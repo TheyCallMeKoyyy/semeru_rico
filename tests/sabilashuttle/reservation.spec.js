@@ -14,9 +14,9 @@ async function pickDeparture(webApp, departure) {
         type: 'allure.step',
         value: 'Pick departure',
     });
-    await expect(webApp.locator(`xpath=(//div[@class='col-11'])[1]`)).toBeVisible();
-    await webApp.locator(`xpath=(//span[@class='badge-kota text-lowercase pcapital cursorpointer'][normalize-space()='BANDUNG'])[1]`).click();
-    await webApp.locator(`xpath=(//span[@class='badge-kota text-lowercase pcapital cursorpointer'][normalize-space()='BANDUNG'])[1]`).click();
+    await expect(webApp.locator(`xpath=(//span[normalize-space()='KULINER BUNDA KEDUNGSARI'])[1]`)).toBeVisible();
+    await webApp.locator(`xpath=(//div[normalize-space()='TRIO FRONT ONE RESORT MAGELANG'])[1]`).click();
+    await webApp.locator(`xpath=(//div[normalize-space()='TRIO FRONT ONE RESORT MAGELANG'])[1]`).click();
 }
 
 /**
@@ -31,9 +31,9 @@ async function pickArrival(webApp, arrival) {
         type: 'allure.step',
         value: 'Pick arrival',
     });
-    await expect(webApp.locator(`xpath=(//div[@id='dropdownMenuButton2'])[1]    `)).toBeVisible();
-    await webApp.locator(`xpath=(//span[@class='badge-kota text-lowercase pcapital cursorpointer'][normalize-space()='JAKARTA'])[2]`).click();
-    await webApp.locator(`xpath=(//span[@class='badge-kota text-lowercase pcapital cursorpointer'][normalize-space()='JAKARTA'])[2]`).click();
+    await expect(webApp.locator(`xpath=(//span[normalize-space()='4U RESTO N CAFE UNGARAN'])[1]`)).toBeVisible();
+    await webApp.locator(`xpath=(//div[@class='ss-option'][normalize-space()='HAZOTEL SEMARANG'])[2]`).click();
+    await webApp.locator(`xpath=(//div[@class='ss-option'][normalize-space()='HAZOTEL SEMARANG'])[2]`).click();
 }
 
 /**
@@ -48,7 +48,7 @@ async function selectDate(webApp, date) {
         type: 'allure.step',
         value: 'Select travel date',
     });
-    const dateField = webApp.locator(`//input[@id='tgl_berangkat']`);
+    const dateField = webApp.locator(`(//input[@id='tanggal_pergi'])[1]`);
     await expect(dateField).toBeVisible();
     await dateField.click();
     
@@ -126,7 +126,7 @@ async function selectSchedule(webApp) {
         type: 'allure.step',
         value: 'Select travel schedule',
     });
-    const scheduleButton = webApp.locator(`xpath=(//button[@class='btn bg-blue text-white fs-14 py-2 px-5 br-6'][normalize-space()='Pilih'])[1]`);
+    const scheduleButton = webApp.locator(`xpath=(//button[@class='btn text-white bg-red h-100 fs-14 shadow br-button text-uppercase'][normalize-space()='Pilih'])[1]`);
     await scheduleButton.click();
 }
 
@@ -167,7 +167,7 @@ async function inputPassengerData(webApp, name, email, phoneNumber, custName, se
     //await webApp.locator(`//div[6]//div[2]//div[1]//div[1]//label[2]`).click();
 
     //click tombol "selanjutnya"
-    await webApp.locator(`(//button[normalize-space()='Selanjutnya'])[1]`).click();
+    await webApp.locator(`(//button[normalize-space()='Pilih Kursi'])[1]`).click();
 }
 
 /**
@@ -184,13 +184,13 @@ async function selectSeat(webApp, seatNumber) {
     });
 
     // Ganti XPATH ini sesuai struktur HTML sistem kursi kamu
-    const seatLocator = webApp.locator(`xpath=//div[@id='2']//p[@class='text-center']`);
+    const seatLocator = webApp.locator(`xpath=//div[@id='7']//p[1]`);
     
     await expect(seatLocator).toBeVisible({ timeout: 5000 });
     await seatLocator.click();
 
     //Klik Selanjutnya Untuk Ke Page Pembayaran
-    await webApp.locator(`(//button[normalize-space()='Selanjutnya'])[1]`).click();
+    await webApp.locator(`(//button[normalize-space()='pembayaran'])[1]`).click();
 }
 
 /**
@@ -227,7 +227,8 @@ async function checkingTnc(webApp) {
     const tncButton = webApp.locator(`xpath=//label[contains(text(),'Silahkan tandai kotak ini sebagai bukti bahwa anda')]`);
     await tncButton.click()
 
-    await webApp.locator(`xpath=//button[@id='submit']`).click();
+    await webApp.locator(`xpath=(//button[@id='submit'])[1]`).click();
+    await webApp.locator(`xpath=(//button[@type='button'][normalize-space()='Konfirmasi'])[1]`).click();
 }
 
 /**

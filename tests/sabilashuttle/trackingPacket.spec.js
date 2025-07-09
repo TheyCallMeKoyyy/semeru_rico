@@ -1,5 +1,17 @@
+
+/**
+ * @description Test script untuk mengecek fitur Lacak Paket pada website.
+ * Menggunakan Playwright dan Allure untuk dokumentasi dan pelaporan otomatis.
+ */
+
 const { config } = require('../../config');
 const { test, expect } = require('../setup');
+
+/**
+ * @description Fungsi untuk mengakses halaman "Lacak Paket" dan mengisi kode resi.
+ * @param {object} webApp - Objek Playwright untuk mengontrol browser.
+ * @param {string} codeBooking - Kode resi yang akan dilacak.
+ */
 
 // Helper function to check booking with try-catch
 async function cekTracking(webApp, codeBooking) {
@@ -9,15 +21,20 @@ async function cekTracking(webApp, codeBooking) {
     });
 
     try {
-        await webApp.locator("xpath=//body/nav[contains(@class,'navbar navbar-expand-xl sticky-top navbar-light')]/div[contains(@class,'container-fluid')]/div[@id='navbarNav']/ul[contains(@class,'navbar-nav mx-auto')]/li[8]/div[1]/a[1]").click();
-        await webApp.locator("xpath=(//a[normalize-space()='Cek Paket'])[1]").click();
-        await webApp.locator("xpath=(//input[contains(@placeholder,'Kode Resi')])[1]").fill(codeBooking);
+        await webApp.locator("xpath=(//a[normalize-space()='Lacak Paket'])[1]").click();
+        await webApp.locator("xpath=(//input[@placeholder='Masukan Nomor Resi Disini'])[1]").fill(codeBooking);
         await webApp.locator("xpath=(//button[normalize-space()='Cek Paket'])[1]").click();
     } catch (error) {
         test.fail(`Error in cekTracking: ${error.message}`);
         throw error; // Re-throw the error after logging
     }
 }
+
+/**
+ * @description Fungsi untuk memastikan informasi paket muncul setelah dilakukan pelacakan.
+ * @param {object} webApp - Objek Playwright untuk mengontrol browser.
+ * @param {string} codeBooking - Kode resi yang akan diverifikasi kemunculannya.
+ */
 
 // Helper function to check tracking info with try-catch
 async function dataTracking(webApp, codeBooking) {
@@ -33,6 +50,10 @@ async function dataTracking(webApp, codeBooking) {
         throw error; // Re-throw the error after logging
     }
 }
+
+/**
+ * @description Pengujian utama untuk mengecek fungsi lacak paket dengan kode booking.
+ */
 
 // Main test with try-catch
 test('Tracking Packet', async ({ webApp }) => {
