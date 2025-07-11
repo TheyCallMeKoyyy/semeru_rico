@@ -62,7 +62,7 @@ export const config = {
     packet: 'PCNX250221OKA5',
   },
   url: {
-    website: 'https://booking.sabilashuttle.co.id/',
+    website: 'https://www.btmshuttle.id/',
     otp: ''
   }
 };
